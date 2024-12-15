@@ -17,11 +17,11 @@
 </head>
 <body>
     <h1>Products</h1>
-    <div>
+    <ul>
         <?php foreach($products as $product){ ?>
         <h3><?php echo $product['name']; ?></h3>
         <p>$ <?php echo $product['price']; ?></p>
         <?php }?>
-    </div>
+    </ul>
 </body>
 </html>
