@@ -7,9 +7,12 @@
 </head>
 <body>
     <?php
-        echo $_POST['username'];
-        echo $_REQUEST['username'];
-    ?>
-</body>cd ..
+        $a = 10;
+        $b = &$a;
 
+        echo $b;
+        
+
+    ?>
+</body>
 </html>
