@@ -5,6 +5,4 @@
         echo $ninja . "<br>";
     }
 
-
-
 ?>

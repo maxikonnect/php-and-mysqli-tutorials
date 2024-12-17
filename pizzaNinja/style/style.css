@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+    text-transform: capitalize;
+    color: #cbb09c;
+}
+
+*::selection{
+    color: #fff;
+    background-color: #333;
+}
+
+*::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 1rem;
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-yellow);
+}
+
+html{
+    font-size: 62.5%;
+    /* font-size: clamp(1rem, 2vw + 1rem, 62.5%); */
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+
+body {
+    overflow: hidden;
+    transition: 0.2s linear !important;
+}
+
+
+/* header */
+
+.header{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    border-bottom: 4px solid #cbb09c;
+}
+
+.header .logo{
+    font-size: 3rem;
+}
+
+.header .navbar a {
+    display: inline-block;
+    background-color: #cbb09c;
+    color: #fff;
+    padding: 1rem 1.6rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: background-color 0.2s linear, color 0.2s linear, outline 0.2s linear;
+    outline: none; /* No outline by default */
+}
+
+.header .navbar a:hover {
+    color: #cbb09c;
+    background-color: #fff;
+    outline: 2px solid #cbb09c; /* Use outline instead of border */
+}
+
+.form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 25px;
+    margin:0 auto;
+}
+
+
+.form-container form {
+        width: 80vw; /* Width is 80% of the viewport width */
+        max-width: 800px; /* Maximum width of 700px */
+        padding: 20px;
+        box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+
+.form-header{
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+
+.form-header span{
+    color: rgb(90, 90, 90);
+    font-size: 4rem; 
+    position: relative;
+    display: inline-block;
+}
+
+.form-header span::after{
+    content:"";
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    width: 80%;
+    height: 0.5rem;
+    transform: skewX(-60%);
+    transition: width .2s linear, left .2s linear;
+    background-color: #cbb09c;
+}
+
+.form-header span:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.inputBox{
+    margin-bottom: 20px;
+}
+form label,
+form input{
+    display: block;
+    font-size: 2rem;
+    color: rgb(90, 90, 90);
+}
+
+form input[type="text"]{
+    width: 100%;
+    border-bottom: 2px solid rgb(90, 90, 90);
+    text-transform: none;
+}
+
+.submit-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.submit-btn{
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    background-color: #cbb09c;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s linear, color 0.2s linear, outline 0.2s linear;
+    outline: none; /* No outline by default */
+}
+/*footer */
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.footer p{
+    margin-top: 1.5rem;
+    color: rgb(90, 90, 90);
+    font-size: 1.6rem;
+    margin-bottom: 1.3rem;
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 57%;
+    }
+    .form-container form{
+        width: 90%;
+    }
+    
+}
+
+@media screen and (min-width: 481px) and (max-width: 767px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+  
+/* USED OUTLINE INSTEAD OF BORDER TO PREVENT The issue you're experiencing, where the border of the header container also moves when you hover over the link button, is likely due to the fact that the border is part of the transition in your .navbar a:hover selector. When you apply a border to the link during hover, it affects the overall layout of the page, which could cause unwanted layout shifts, particularly if the header container has a border or padding. */
